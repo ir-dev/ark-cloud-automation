@@ -1,0 +1,45 @@
+
+# Enable Web Sockets
+az webapp config set --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d --web-sockets-enabled true
+
+# Enable Build Automation (forces 'npm install' on Azure side)
+az webapp config appsettings set --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+
+az webapp config appsettings set \
+  --name <unique-app-name> \
+  --resource-group NodeRedGroup \
+  --settings KEY1=VALUE1 KEY2=VALUE2 NODE_ENV=production
+
+
+-- increase the timeut to - 30 mins
+> az webapp config appsettings set --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d --settings WEBSITES_CONTAINER_START_TIME_LIMIT=1800
+
+-- enable ftp creds
+> az webapp config set --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d --ftp-basic-auth-publishing-credentials-enabled true
+
+-- enforce FTPS
+> az webapp config set --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d --ftps-state FtpsOnly
+
+-- repair & restart instance
+> az webapp restart --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d
+
+
+-- deploy your code
+> az webapp up --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d
+
+-- monitor app
+
+> az webapp log tail --name ark-app-nr-i1-d --resource-group rg-ark-immanuelr-i1-d
+
+
+-- test raptor-mini test
+run chmod +x deploy-node-red-azure.sh
+then execute:
+.deploy-node-red-azure.sh <resource-group> <app-name> [location] [plan-name] [sku]
+
+> chmod +x deploy-node-red-azure.sh
+> ./deploy-node-red-azure.sh rg-ark-immanuelr-i1-d ark-app-nr-i1-d southindia ASP-rgcadplanneri1d-b479 P1v3
+
+> > ./deploy-node-red-azure.sh rg-ark-immanuelr-i1-d-test ark-app-nr-i1-d-test southindia ASP-rgcadplanneri1d-test P1v3
+
+> ./deploy-node-red-azure.sh rg-ark-immanuelr-i1-d ark-app-nr-i1-d southindia [plan-name] [sku]

@@ -1,0 +1,33 @@
+{
+  "name": "node-red-1",
+  "version": "1.0.0",
+  "description": "AI-assisted Node-RED Azure App Service deployment with admin UI, palette management, and diagnostic logging.",
+  "author": "Immanuel R",
+  "generatedBy": "AI-assisted script generation with developer attribution",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "azure",
+    "app-service",
+    "ai-assisted",
+    "deployment-script",
+    "palette-management",
+    "admin-ui",
+    "diagnostics-logging"
+  ],
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0 <21.0.0"
+  },
+  "dependencies": {
+    "node-red": "^4.1.8"
+  },
+  "devDependencies": {
+    "node-red-admin": "^0.2.0"
+  }
+}
