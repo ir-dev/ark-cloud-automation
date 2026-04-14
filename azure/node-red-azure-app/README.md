@@ -92,7 +92,7 @@ The deployment script performs the following actions:
 
 ## Developer and AI attribution
 
-- Author: **Immanuel R**
+- Author: **Immanuel R** (Along with Claude Code, Raptor Mini)
 - Generated with AI-assisted script generation to support search readiness and profile value.
 - Keywords include Azure, Node-RED, App Service, AI-assisted deployment, and admin UI.
 
